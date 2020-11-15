@@ -15,12 +15,11 @@ pipeline {
     stage('Test') {
       steps {
         echo "testing..."
-        sh "ls -lRrth"
       }
     }
     stage('Deploy') {
       steps {
-        git url: repositoryUrl, credentialsId: "github-demo", branch: branch
+        git url: repos, credentialsId: "github-demo", branch: branch
         sh "ls -ltrhR"
       }
     }
