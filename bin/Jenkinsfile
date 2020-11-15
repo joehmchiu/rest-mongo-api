@@ -3,6 +3,7 @@ pipeline {
   environment {
     repos = "https://github.com/joehmchiu/rest-mongo-auto-test.git"
     branch = "master"
+    cid = "github-demo"
   }
 
   agent any
@@ -19,8 +20,8 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        git url: repos, credentialsId: "github-demo", branch: branch
-        sh "ls -ltrhR"
+        git url: repos, credentialsId: cid, branch: branch
+        load "go"
       }
     }
     stage('Prod') {
