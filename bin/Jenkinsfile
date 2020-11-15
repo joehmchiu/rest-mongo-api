@@ -22,10 +22,10 @@ pipeline {
       steps {
         git url: repos, credentialsId: cid, branch: branch
         sh "ls -lthr"
-        // load "go"
+        load "./go"
       }
     }
-    stage('Done') {
+    stage('Ready') {
       steps {
         echo "App is Ready"
       }
