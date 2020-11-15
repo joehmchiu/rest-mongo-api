@@ -14,12 +14,21 @@ pipeline {
         echo 'Hi, starting to build the App.'
       }
     }
-    stage('Pre Check') {
+    stage('Update Change') {
       steps {
         git url: repos, credentialsId: cid, branch: branch
         sh "pwd"
         sh "cd ${workspace}/bin/; ls -lthr"
-        load "${workspace}/go"
+      }
+    }
+    stage('Deploy App') {
+      steps {
+        load "${workspace}/installer"
+      }
+    }
+    stage('Test App') {
+      steps {
+        load "${workspace}/tester"
       }
     }
     stage('App is Ready') {
