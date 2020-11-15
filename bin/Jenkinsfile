@@ -4,6 +4,7 @@ pipeline {
     repos = "https://github.com/joehmchiu/rest-mongo-auto-test.git"
     branch = "master"
     cid = "github-demo"
+    workspace = pwd()
   }
 
   agent any
@@ -23,7 +24,7 @@ pipeline {
         git url: repos, credentialsId: cid, branch: branch
         sh "pwd"
         sh "ls -lthr"
-        sh "cd ./bin"
+        sh "cd ${workspace}/bin"
         sh "ls -lthr"
         // load "./go"
       }
