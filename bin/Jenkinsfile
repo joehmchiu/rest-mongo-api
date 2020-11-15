@@ -1,4 +1,6 @@
 pipeline {
+  repos = "https://github.com/joehmchiu/rest-mongo-auto-test.git"
+  branch = "master"
   agent any
   stages {
     stage('Build') {
@@ -13,8 +15,6 @@ pipeline {
       }
     }
     stage('Deploy') {
-      repos = "https://github.com/joehmchiu/rest-mongo-auto-test.git"
-      branch = "master"
       steps {
         git url: repositoryUrl, credentialsId: "github-demo", branch: branch
         sh "ls -ltrhR"
