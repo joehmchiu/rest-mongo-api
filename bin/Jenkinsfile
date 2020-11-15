@@ -9,17 +9,12 @@ pipeline {
 
   agent any
   stages {
-    stage('Build') {
+    stage('Start Task') {
       steps {
-        echo 'Hi, GeekFlare. Starting to build the App.'
+        echo 'Hi, starting to build the App.'
       }
     }
-    stage('Test') {
-      steps {
-        echo "testing..."
-      }
-    }
-    stage('Deploy') {
+    stage('Pre Check') {
       steps {
         git url: repos, credentialsId: cid, branch: branch
         sh "pwd"
@@ -27,7 +22,7 @@ pipeline {
         load "${workspace}/go"
       }
     }
-    stage('Ready') {
+    stage('App is Ready') {
       steps {
         echo "App is Ready"
       }
