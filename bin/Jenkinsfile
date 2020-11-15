@@ -24,8 +24,7 @@ pipeline {
         git url: repos, credentialsId: cid, branch: branch
         sh "pwd"
         sh "ls -lthr"
-        sh "cd ${workspace}/bin"
-        sh "ls -lthr"
+        sh "ls -ltrh ${workspace}/bin"
         // load "./go"
       }
     }
