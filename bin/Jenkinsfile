@@ -21,8 +21,9 @@ pipeline {
     stage('Deploy') {
       steps {
         git url: repos, credentialsId: cid, branch: branch
+        sh "pwd"
         sh "ls -lthr"
-        load "./go"
+        // load "./go"
       }
     }
     stage('Ready') {
