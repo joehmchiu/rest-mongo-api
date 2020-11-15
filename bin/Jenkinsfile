@@ -23,6 +23,8 @@ pipeline {
         git url: repos, credentialsId: cid, branch: branch
         sh "pwd"
         sh "ls -lthr"
+        sh "cd bin"
+        sh "ls -lthr"
         // load "./go"
       }
     }
