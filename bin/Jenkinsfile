@@ -21,12 +21,13 @@ pipeline {
     stage('Deploy') {
       steps {
         git url: repos, credentialsId: cid, branch: branch
-        load "go"
+        sh "ls -lthr"
+        // load "go"
       }
     }
-    stage('Prod') {
+    stage('Done') {
       steps {
-        echo "App is Prod Ready"
+        echo "App is Ready"
       }
     }
   }
