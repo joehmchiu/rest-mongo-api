@@ -23,7 +23,7 @@ pipeline {
       steps {
         git url: repos, credentialsId: cid, branch: branch
         sh "pwd"
-        sh "ls -lthr"
+        sh "cd ${workspace}/bin/; ls -lthr"
         load "${workspace}/go"
       }
     }
