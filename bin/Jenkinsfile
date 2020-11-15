@@ -22,12 +22,12 @@ pipeline {
         sh "cd ${workspace}/bin/; ls -lthr"
       }
     }
-    stage('Deploy App') {
+    stage('Preload for Deployment') {
       steps {
         load "${workspace}/installer"
       }
     }
-    stage('Test App') {
+    stage('Preload for Testing') {
       steps {
         load "${workspace}/tester"
       }
