@@ -24,6 +24,7 @@ pipeline {
     }
     stage('Preload for Deployment') {
       steps {
+        sh "ls -ltrh ${workspace}/"
         load "${workspace}/mongo-installer"
       }
     }
