@@ -33,9 +33,9 @@ pipeline {
         load "${workspace}/crud-tester"
       }
     }
-    stage('App is Ready') {
+    stage('API is Ready') {
       steps {
-        echo "App is Ready"
+        echo "API is Ready"
       }
     }
   }
