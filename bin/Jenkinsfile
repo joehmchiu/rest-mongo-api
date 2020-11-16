@@ -24,12 +24,12 @@ pipeline {
     }
     stage('Preload for Deployment') {
       steps {
-        load "${workspace}/installer"
+        load "${workspace}/mongo-installer"
       }
     }
     stage('Preload for Testing') {
       steps {
-        load "${workspace}/tester"
+        load "${workspace}/crud-tester"
       }
     }
     stage('App is Ready') {
