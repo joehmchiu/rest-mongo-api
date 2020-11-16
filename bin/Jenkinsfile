@@ -30,7 +30,7 @@ pipeline {
     stage('Preload for Testing') {
       steps {
         sh "ls -ltrh ${workspace}/"
-        // load "${workspace}/crud-tester"
+        load "${workspace}/crud-tester"
       }
     }
     stage('App is Ready') {
