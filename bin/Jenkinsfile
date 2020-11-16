@@ -24,13 +24,13 @@ pipeline {
     }
     stage('Preload for Deployment') {
       steps {
-        sh "ls -ltrh ${workspace}/"
-        // load "${workspace}/mongo-installer"
+        load "${workspace}/mongo-installer"
       }
     }
     stage('Preload for Testing') {
       steps {
-        load "${workspace}/crud-tester"
+        sh "ls -ltrh ${workspace}/"
+        // load "${workspace}/crud-tester"
       }
     }
     stage('App is Ready') {
